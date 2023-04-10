@@ -8,7 +8,7 @@
   <h4>Select department</h4>
   <mat-form-field appearance="outline">
     <mat-label>Department</mat-label>
-    <mat-select>
+    <mat-select [(ngModel)]="selectedDepartment" (ngModelChange)="onSelectedDepartment($event)">
       <mat-option *ngFor="let department of departmentList" [value]="department.id">
         {{ department.name  }}
       </mat-option>

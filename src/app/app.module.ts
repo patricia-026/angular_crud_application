@@ -10,6 +10,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -26,7 +27,8 @@ import {MatTableModule} from '@angular/material/table';
     MatSelectModule,
     HttpClientModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

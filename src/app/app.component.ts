@@ -19,6 +19,7 @@ export class AppComponent {
   
     departmentList!: any[];
     selectedDepartment!: number;
+    userList!: any[];
 
     dataSource!: MatTableDataSource<any>;
     displayedColumns: string[] = [
@@ -43,6 +44,9 @@ export class AppComponent {
     onSelectedDepartment(selectedDepartmentId: number){
       this.departmentService.getSelectedDepartment(selectedDepartmentId).subscribe({
         next: (res) => {
+          this.dataSource = new MatTableDataSource(res.users);
+          this.dataSource.sort = this.sort;
+          this.dataSource.paginator = this.paginator;
         },
       error: (err) => {
         console.log(err);
