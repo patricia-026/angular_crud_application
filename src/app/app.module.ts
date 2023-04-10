@@ -11,12 +11,15 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
+import { EmployeeAddEditComponent } from './employee-add-edit/employee-add-edit.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EmployeeAddEditComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     MatButtonModule,
     MatTableModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],
