@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <span>CRUD Application</span>
+  <span class="example-spacer"></span>
+</mat-toolbar>
+
+<div class="main-body">
+
+  <h4>Select department</h4>
+  <mat-form-field appearance="outline">
+    <mat-label>Department</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let department of departmentList" [value]="department.id">
+        {{ department.name  }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+     
+
+</div>
