@@ -6,6 +6,7 @@ import { MatSort } from '@angular/material/sort';
 import { EmployeeService } from './service/employee.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EmployeeAddEditComponent } from './employee-add-edit/employee-add-edit.component';
+import { CoreService } from './core/core.service';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,7 @@ export class AppComponent {
     private departmentService: DepartmentService,
     private employeeService: EmployeeService,
     private _dialog: MatDialog,
+    private _coreService: CoreService
   
 
   ) {}
@@ -73,7 +75,7 @@ export class AppComponent {
     deleteEmployee(id: number){
       this.employeeService.deleteEmployee(id).subscribe({
         next: (res) => {
-          //alert('employee successfully deleted!');
+          this._coreService.openSnackBar('Employee successfully deleted!');
           this.onSelectedDepartment(this.selectedDepartment);
         },
         error: (err) => {

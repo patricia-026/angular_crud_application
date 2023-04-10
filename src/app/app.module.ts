@@ -18,7 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import {MatIconModule} from '@angular/material/icon';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,8 @@ import {MatIconModule} from '@angular/material/icon';
     ReactiveFormsModule,
     MatInputModule,
     MatNativeDateModule,
-    MatIconModule
+    MatIconModule,
+    MatSnackBarModule
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'hu'}],
   bootstrap: [AppComponent],
