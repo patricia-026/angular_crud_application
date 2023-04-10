@@ -17,7 +17,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
-
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -40,7 +40,8 @@ import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
     MatDatepickerModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatIconModule
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'hu'}],
   bootstrap: [AppComponent],

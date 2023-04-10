@@ -19,6 +19,7 @@ export class AppComponent {
     private departmentService: DepartmentService,
     private employeeService: EmployeeService,
     private _dialog: MatDialog,
+  
 
   ) {}
   
@@ -65,6 +66,33 @@ export class AppComponent {
       dialogRef.afterClosed().subscribe({
         next: (val) => {
           this.onSelectedDepartment(this.selectedDepartment);
+        }
+      });
+    }
+
+    deleteEmployee(id: number){
+      this.employeeService.deleteEmployee(id).subscribe({
+        next: (res) => {
+          //alert('employee successfully deleted!');
+          this.onSelectedDepartment(this.selectedDepartment);
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      });
+    }
+
+    openEditEmployeeForm(data: any){
+      this.departmentService.setSelectedDepartmentId(this.selectedDepartment);
+      const dialogRef = this._dialog.open(EmployeeAddEditComponent, {
+        data
+      });
+
+      dialogRef.afterClosed().subscribe({
+        next: (val) => {
+          if(val){
+            this.onSelectedDepartment(this.selectedDepartment);
+          }
         }
       });
     }

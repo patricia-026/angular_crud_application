@@ -40,8 +40,7 @@ export class EmployeeAddEditComponent implements OnInit {
         .subscribe({
           next: (val: any) => {
             alert('Employee updated successfully');
-            //this._coreService.openSnackBar('Employee updated successfully!');
-            //this._dialogRef.close(true);
+            this._dialogRef.close(true);
           },
           error: (err: any) => {
             console.log(err);
@@ -54,8 +53,7 @@ export class EmployeeAddEditComponent implements OnInit {
       this._employeeService.addEmployee(this.employeeForm.value).subscribe({
         next: (val: any) => {
           alert('Employee added successfully');
-          //this._coreService.openSnackBar('Employee added successfully');
-          //this._dialogRef.close(true);
+          this._dialogRef.close(true);
         },
         error: (err: any) => {
           console.log(err);
