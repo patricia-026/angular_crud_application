@@ -59,7 +59,7 @@ export class AppComponent {
       );
     }
 
-    openAddEditEmployeeForm(){
+    openAddEmployeeForm(){
       this.departmentService.setSelectedDepartmentId(this.selectedDepartment);
       const dialogRef = this._dialog.open(EmployeeAddEditComponent);
       dialogRef.afterClosed().subscribe({

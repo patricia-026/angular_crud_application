@@ -13,6 +13,10 @@ import {MatTableModule} from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import { EmployeeAddEditComponent } from './employee-add-edit/employee-add-edit.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 
 
 
@@ -32,9 +36,13 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatButtonModule,
     MatTableModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDatepickerModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatNativeDateModule
   ],
-  providers: [],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'hu'}],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

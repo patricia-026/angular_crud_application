@@ -18,7 +18,7 @@
 
   <div class="container">
     <h4 class="box1">Employees</h4>
-    <button mat-raised-button class="box2" color="accent" (click)="openAddEditEmployeeForm()">
+    <button mat-raised-button class="box2" color="accent" (click)="openAddEmployeeForm()" *ngIf="selectedDepartment != null">
       Add employee</button>
   </div>
 
